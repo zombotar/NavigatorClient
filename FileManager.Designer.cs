@@ -73,6 +73,7 @@
             this.prevButton.Size = new System.Drawing.Size(55, 54);
             this.prevButton.TabIndex = 0;
             this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // button1
             // 
