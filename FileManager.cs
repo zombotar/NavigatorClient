@@ -111,11 +111,14 @@ namespace Client1
 
         private void prevButton_Click(object sender, EventArgs e)
         {
-            var server = new ServiceReference1.Service1Client();
-            var resp = server.GetListOfData(mUserID, mCurrDirectoryData.rootPath);
-            if (resp != null && resp.mErrCode == 0)
+            if (mCurrDirectoryData.rootPath != mCurrDirectoryData.currPath)
             {
-                RefreshListView(resp);
+                var server = new ServiceReference1.Service1Client();
+                var resp = server.GetListOfData(mUserID, mCurrDirectoryData.rootPath);
+                if (resp != null && resp.mErrCode == 0)
+                {
+                    RefreshListView(resp);
+                }
             }
         }
     }
