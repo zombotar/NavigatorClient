@@ -189,6 +189,7 @@ namespace Client1
 
                         uploadRequestInfo.mFileByteStream = streamEncrypted;
 
+
                         OperationResult result = new OperationResult();
                         int resultFileId = -1;
                         resultFileId = server.AddFile(uploadRequestInfo.mMetaFile,
