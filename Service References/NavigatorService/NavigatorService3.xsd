@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AuthenticationResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mGroupNames" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="mResult" nillable="true" type="tns:OperationResult" />
+      <xs:element minOccurs="0" name="mUserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationResult" nillable="true" type="tns:AuthenticationResult" />
+  <xs:complexType name="OperationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="mErrMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResult" nillable="true" type="tns:OperationResult" />
+  <xs:complexType name="BrowserDataResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="currPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mDirectories" nillable="true" type="tns:ArrayOfFilesystemObject" />
+      <xs:element minOccurs="0" name="mFiles" nillable="true" type="tns:ArrayOfFilesystemObject" />
+      <xs:element minOccurs="0" name="mResult" nillable="true" type="tns:OperationResult" />
+      <xs:element minOccurs="0" name="rootPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrowserDataResult" nillable="true" type="tns:BrowserDataResult" />
+  <xs:complexType name="ArrayOfFilesystemObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilesystemObject" nillable="true" type="tns:FilesystemObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilesystemObject" nillable="true" type="tns:ArrayOfFilesystemObject" />
+  <xs:complexType name="FilesystemObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mAccessBitset" type="xs:int" />
+      <xs:element minOccurs="0" name="mFilepath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mFilesize" type="xs:int" />
+      <xs:element minOccurs="0" name="mGid" type="xs:int" />
+      <xs:element minOccurs="0" name="mId" type="xs:int" />
+      <xs:element minOccurs="0" name="mIsDirFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mIsExistsFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mObjName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mUid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilesystemObject" nillable="true" type="tns:FilesystemObject" />
+  <xs:complexType name="GetUsersResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mResult" nillable="true" type="tns:OperationResult" />
+      <xs:element minOccurs="0" name="mUsers" nillable="true" type="tns:ArrayOfUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUsersResult" nillable="true" type="tns:GetUsersResult" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Groups" nillable="true" type="tns:ArrayOfGroup" />
+      <xs:element minOccurs="0" name="mId" type="xs:int" />
+      <xs:element minOccurs="0" name="mName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mPasswordHash" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mId" type="xs:int" />
+      <xs:element minOccurs="0" name="mName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="GetGroupsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mGroups" nillable="true" type="tns:ArrayOfGroup" />
+      <xs:element minOccurs="0" name="mResult" nillable="true" type="tns:OperationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGroupsResult" nillable="true" type="tns:GetGroupsResult" />
+</xs:schema>

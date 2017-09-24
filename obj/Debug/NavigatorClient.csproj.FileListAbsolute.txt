@@ -1,0 +1,13 @@
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\bin\Debug\Client1.exe.config
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.exe
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.pdb
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\bin\Debug\Client1.exe
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\bin\Debug\Client1.pdb
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\NavigatorClient.csprojResolveAssemblyReference.cache
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.ACL_Control.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.AddUserDialog.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.AdminDBControl.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.FileManager.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.Authenticate.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\Client1.Properties.Resources.resources
+C:\Users\Vasily\Desktop\Полигон\NavigatorClient\NavigatorClient\obj\Debug\NavigatorClient.csproj.GenerateResource.Cache

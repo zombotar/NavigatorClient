@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NavigatorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+      <xsd:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50681/NavigatorService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="NavigatorIService_Authentication_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_Authentication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetRootDirForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRootDirForUser" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetRootDirForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRootDirForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetListOfData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfData" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetListOfData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoteFileInfo">
+    <wsdl:part name="parameters" element="tns:RemoteFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="RemoteFileInfo_Headers">
+    <wsdl:part name="mMetaFile" element="tns:mMetaFile" />
+  </wsdl:message>
+  <wsdl:message name="ManFilesystemObjResult">
+    <wsdl:part name="parameters" element="tns:ManFilesystemObjResult" />
+  </wsdl:message>
+  <wsdl:message name="UserNostreamOperationRequest">
+    <wsdl:part name="parameters" element="tns:UserNostreamOperationRequest" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFilesystemRequest">
+    <wsdl:part name="parameters" element="tns:DownloadFilesystemRequest" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileResult">
+    <wsdl:part name="parameters" element="tns:DownloadFileResult" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileResult_Headers">
+    <wsdl:part name="mObj" element="tns:mObj" />
+    <wsdl:part name="mOrigFilesize" element="tns:mOrigFilesize" />
+    <wsdl:part name="mResult" element="tns:mResult" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddUserToGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_AddUserToGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteUserFromGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_DeleteUserFromGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_ChangeAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAccess" />
+  </wsdl:message>
+  <wsdl:message name="NavigatorIService_ChangeAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAccessResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NavigatorIService">
+    <wsdl:operation name="Authentication">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/Authentication" message="tns:NavigatorIService_Authentication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AuthenticationResponse" message="tns:NavigatorIService_Authentication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRootDirForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/GetRootDirForUser" message="tns:NavigatorIService_GetRootDirForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/GetRootDirForUserResponse" message="tns:NavigatorIService_GetRootDirForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfData">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/GetListOfData" message="tns:NavigatorIService_GetListOfData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/GetListOfDataResponse" message="tns:NavigatorIService_GetListOfData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/AddFile" name="RemoteFileInfo" message="tns:RemoteFileInfo" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AddFileResponse" name="ManFilesystemObjResult" message="tns:ManFilesystemObjResult" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/AddDirectory" name="UserNostreamOperationRequest" message="tns:UserNostreamOperationRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AddDirectoryResponse" name="ManFilesystemObjResult" message="tns:ManFilesystemObjResult" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/DeleteObject" name="UserNostreamOperationRequest" message="tns:UserNostreamOperationRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/DeleteObjectResponse" name="ManFilesystemObjResult" message="tns:ManFilesystemObjResult" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/DownloadFile" name="DownloadFilesystemRequest" message="tns:DownloadFilesystemRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/DownloadFileResponse" name="DownloadFileResult" message="tns:DownloadFileResult" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/AddUser" message="tns:NavigatorIService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AddUserResponse" message="tns:NavigatorIService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/DeleteUser" message="tns:NavigatorIService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/DeleteUserResponse" message="tns:NavigatorIService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/GetUsers" message="tns:NavigatorIService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/GetUsersResponse" message="tns:NavigatorIService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/GetGroups" message="tns:NavigatorIService_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/GetGroupsResponse" message="tns:NavigatorIService_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/AddGroup" message="tns:NavigatorIService_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AddGroupResponse" message="tns:NavigatorIService_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/DeleteGroup" message="tns:NavigatorIService_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/DeleteGroupResponse" message="tns:NavigatorIService_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/AddUserToGroup" message="tns:NavigatorIService_AddUserToGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/AddUserToGroupResponse" message="tns:NavigatorIService_AddUserToGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserFromGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/DeleteUserFromGroup" message="tns:NavigatorIService_DeleteUserFromGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/DeleteUserFromGroupResponse" message="tns:NavigatorIService_DeleteUserFromGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/NavigatorIService/ChangeAccess" message="tns:NavigatorIService_ChangeAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/NavigatorIService/ChangeAccessResponse" message="tns:NavigatorIService_ChangeAccess_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_NavigatorIService" type="tns:NavigatorIService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentication">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/Authentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRootDirForUser">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/GetRootDirForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfData">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/GetListOfData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/AddFile" style="document" />
+      <wsdl:input name="RemoteFileInfo">
+        <soap:header message="tns:RemoteFileInfo_Headers" part="mMetaFile" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ManFilesystemObjResult">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDirectory">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/AddDirectory" style="document" />
+      <wsdl:input name="UserNostreamOperationRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ManFilesystemObjResult">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObject">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/DeleteObject" style="document" />
+      <wsdl:input name="UserNostreamOperationRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ManFilesystemObjResult">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/DownloadFile" style="document" />
+      <wsdl:input name="DownloadFilesystemRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DownloadFileResult">
+        <soap:header message="tns:DownloadFileResult_Headers" part="mObj" use="literal" />
+        <soap:header message="tns:DownloadFileResult_Headers" part="mOrigFilesize" use="literal" />
+        <soap:header message="tns:DownloadFileResult_Headers" part="mResult" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserFromGroup">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/DeleteUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAccess">
+      <soap:operation soapAction="http://tempuri.org/NavigatorIService/ChangeAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NavigatorService">
+    <wsdl:port name="BasicHttpBinding_NavigatorIService" binding="tns:BasicHttpBinding_NavigatorIService">
+      <soap:address location="http://localhost:50681/NavigatorService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

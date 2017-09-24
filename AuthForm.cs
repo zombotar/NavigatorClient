@@ -18,7 +18,7 @@ namespace Client1
             InitializeComponent();
         }
 
-        static string HashString(string str)
+        public static string HashString(string str)
         {
             byte[] hash = Encoding.ASCII.GetBytes(str);
             var md5 = System.Security.Cryptography.MD5.Create();
@@ -38,16 +38,25 @@ namespace Client1
             if (username != "" && password != "")
             {
                 string p_hash = HashString(password);
-                var server = new ServiceReference1.Service1Client();
+                var server = new NavigatorService.NavigatorIServiceClient();
                 var resp = server.Authentication(username, p_hash);
-                if (resp.resultCode == 0)
+                if (resp.mResult.mErrCode == 0)
                 {
-                    FileManager otherForm = new FileManager(resp.userId, this);
+                    FileManager otherForm = new FileManager(resp.mUserId, this, resp.mGroupNames);
                     //otherForm.FormClosed += new FormClosedEventHandler(otherForm_FormClosed);
                     this.Hide();
                     otherForm.Show();
                 }
+                else
+                {
+                    MessageBox.Show(resp.mResult.mErrMessage);
+                }
             }
+        }
+
+        private void Authenticate_Load(object sender, EventArgs e)
+        {
+            passwordTextBox.Text = "";
         }
     }
 }
